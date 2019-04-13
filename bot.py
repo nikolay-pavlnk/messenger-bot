@@ -1,4 +1,4 @@
-from confing import *
+from config import *
 from base_model import *
 from flask import Flask, request
 from pymessenger.bot import Bot
