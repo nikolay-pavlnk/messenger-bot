@@ -3,7 +3,7 @@ from flask import Flask, request
 from pymessenger.bot import Bot
 
 app = Flask(__name__)
-ACCESS_TOKEN = 'EAAILZAP8AbQwBAB27HiNn3DS0I61R3D1gX0HqI1hmDssF16YTmkmPt2RHmC3ceKvfyLrAss48eHN4azCkFlttwZAU7kjzwG3HIuYGZAAzQ1xSZALaUiLFiuw84vSFdHb6O9ewajhuQJesFZA29Th3Q3x9qeooJVgvdMEnISGTnAZDZD'
+ACCESS_TOKEN = 'EAAILZAP8AbQwBAKj2kINB7EOwPucUCooZBSx0kxZBnZC2xyZACGcwpBzR5ZA7lCblUt5GcGB1bCqzvXx0IjJnVkcrffgaQ7MOtZA8morgBKf1hto0VCdBq5KXOclVrRMPgLDzu27CdEJVGjpZCcZBwcWOql71Fa4VTkZC0ZCFzKm6NRagZDZD'
 VERIFY_TOKEN = 'BotTestMessenger'
 bot = Bot(ACCESS_TOKEN)
 
