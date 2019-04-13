@@ -1,4 +1,5 @@
-import random
+from confing import *
+from base_model import *
 from flask import Flask, request
 from pymessenger.bot import Bot
 
