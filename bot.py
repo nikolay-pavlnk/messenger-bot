@@ -11,17 +11,17 @@ bot = Bot(ACCESS_TOKEN)
 
 @app.route("/", methods=['GET', 'POST'])
 def receive_message():
-    if request.method == 'GET':
+	if request.method == 'GET':
         """Before allowing people to message your bot, Facebook has implemented a verify token
         that confirms all requests that your bot receives came from Facebook.""" 
-        token_sent = request.args.get("hub.verify_token")
-        return verify_fb_token(token_sent)
+		token_sent = request.args.get("hub.verify_token")
+		return verify_fb_token(token_sent)
     #if the request was not get, it must be POST and we can just proceed with sending a message back to user
-    else:
-        output = request.get_json()
-        for event in output['entry']:
-            messaging = event['messaging']
-            for message in messaging:
+	else:
+		output = request.get_json()
+		for event in output['entry']:
+			messaging = event['messaging']
+			for message in messaging:
 				print(message)
 				if message.get('message'):
                 #Facebook Messenger ID for user so we know where to send response back to
@@ -30,7 +30,7 @@ def receive_message():
 					response_sent_text = get_message(message['message'].get('text'))
 					send_message(recipient_id, response_sent_text)
 
-    return "Message Processed"
+	return "Message Processed"
 
 
 def verify_fb_token(token_sent):
