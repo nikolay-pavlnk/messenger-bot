@@ -39,7 +39,7 @@ def get_message(message):
 	if True in greetings:
 		return np.random.choice(GREETING_RESPONSES)
 	else:
-		responce =  get_response(message))
+		responce =  get_response(message)
 		corpus.remove(message)
 		return responce
 
