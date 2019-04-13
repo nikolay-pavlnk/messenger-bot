@@ -4,6 +4,7 @@ from flask import Flask, request
 import numpy as np
 from pymessenger.bot import Bot
 
+
 app = Flask(__name__)
 bot = Bot(ACCESS_TOKEN)
 
