@@ -11,25 +11,22 @@ bot = Bot(ACCESS_TOKEN)
 
 @app.route("/", methods=['GET', 'POST'])
 def receive_message():
-	if request.method == 'GET': 
-		token_sent = request.args.get("hub.verify_token")
-		return verify_fb_token(token_sent)
-    #if the request was not get, it must be POST and we can just proceed with sending a message back to user
-	else:
-		output = request.get_json()
-		for event in output['entry']:
-			messaging = event['messaging']
-			for message in messaging:
-				print(message)
+    if request.method == 'GET': 
+        token_sent = request.args.get("hub.verify_token")
+        return verify_fb_token(token_sent)
+    else:
+        output = request.get_json()
+        for event in output['entry']:
+            messaging = event['messaging']
+            for message in messaging:
+                print(message)
+                if message.get('message'):
+                    recipient_id = message['sender']['id']
+                if message['message'].get('text'):
+                    response_sent_text = get_message(message['message'].get('text'))
+                    send_message(recipient_id, response_sent_text)
 
-				if message.get('message'):
-                #Facebook Messenger ID for user so we know where to send response back to
-					recipient_id = message['sender']['id']
-				if message['message'].get('text'):
-					response_sent_text = get_message(message['message'].get('text'))
-					send_message(recipient_id, response_sent_text)
-
-	return "Message Processed"
+    return "Message Processed"
 
 
 def verify_fb_token(token_sent):
