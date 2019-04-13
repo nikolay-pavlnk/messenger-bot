@@ -22,7 +22,7 @@ def receive_message():
                 print(message)
                 if message.get('message'):
                     recipient_id = message['sender']['id']
-                if message['message'].get('text'):
+                if 'message' in message:
                     response_sent_text = get_message(message['message'].get('text'))
                     send_message(recipient_id, response_sent_text)
 
