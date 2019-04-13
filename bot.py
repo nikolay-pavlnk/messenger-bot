@@ -3,8 +3,8 @@ from flask import Flask, request
 from pymessenger.bot import Bot
 
 app = Flask(__name__)
-ACCESS_TOKEN = 'EAAILZAP8AbQwBADpSom2NjHdEOZBxI67bAkKgbKyZCEZAcKLCTcQspHhBAOfiI7DUYOmRyWCLHNZABCeBmYoe0t9PuVZCoSAoOZAKEAHZCiZB9TAulM3ZB5thtFHMFoE6VlZAVgdXZCzV45d7ecXvHg4SZAyZC4y21KUpcvDaTynLFEIxUeQZDZD'
-VERIFY_TOKEN = 'TEMPTEST'
+ACCESS_TOKEN = 'EAAILZAP8AbQwBAB27HiNn3DS0I61R3D1gX0HqI1hmDssF16YTmkmPt2RHmC3ceKvfyLrAss48eHN4azCkFlttwZAU7kjzwG3HIuYGZAAzQ1xSZALaUiLFiuw84vSFdHb6O9ewajhuQJesFZA29Th3Q3x9qeooJVgvdMEnISGTnAZDZD'
+VERIFY_TOKEN = 'BotTestMessenger'
 bot = Bot(ACCESS_TOKEN)
 
 #We will receive messages that Facebook sends our bot at this endpoint 
