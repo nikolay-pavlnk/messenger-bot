@@ -4,8 +4,6 @@ from flask import Flask, request
 import numpy as np
 from pymessenger.bot import Bot
 
-
-
 app = Flask(__name__)
 bot = Bot(ACCESS_TOKEN)
 
@@ -23,7 +21,7 @@ def receive_message():
                     recipient_id = message['sender']['id']
                 if 'message' in message:
                     print(message['message'])
-                    
+
                     response_sent_text = get_message(message['message'].get('text'))
                     send_message(recipient_id, response_sent_text)
 
@@ -45,7 +43,6 @@ def get_message(message):
         return responce
 
 def send_message(recipient_id, response):
-    #sends user the text message provided via input response parameter
     bot.send_text_message(recipient_id, response)
     return "success"
 
