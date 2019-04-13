@@ -25,6 +25,7 @@ def receive_message():
                 if message['message'].get('text'):
                     response_sent_text = get_message(message['message'].get('text'))
                     send_message(recipient_id, response_sent_text)
+                    
     return "Message Processed"
 
 
