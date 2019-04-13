@@ -3,8 +3,8 @@ import nltk
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-# nltk.download('punkt') # first-time use only
-# nltk.download('wordnet') # first-time use only
+nltk.download('punkt') # first-time use only
+nltk.download('wordnet') # first-time use only
 def read_corpus(corpus_name, split_character):
     """
     corpus_name: string; name of text file, which should be readed.
