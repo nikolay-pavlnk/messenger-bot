@@ -1,3 +1,6 @@
 flask
 pymessenger
 gunicorn
+regex
+nltk
+scikit-learn
