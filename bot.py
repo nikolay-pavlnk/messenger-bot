@@ -33,14 +33,15 @@ def verify_fb_token(token_sent):
         return request.args.get("hub.challenge")
     return 'Invalid verification token'
 
-def get_message():
-	greetings = [True if word.lower() in GREETING_INPUTS else False for word in message.text.split()]
+def get_message(message):
+	greetings = [True if word.lower() in GREETING_INPUTS else False for word in message.split()]
     
 	if True in greetings:
-		bot.send_message(message.chat.id, np.random.choice(GREETING_RESPONSES))
+		return np.random.choice(GREETING_RESPONSES)
 	else:
-		bot.send_message(message.chat.id, get_response(message.text))
-		corpus.remove(message.text)
+		responce =  get_response(message))
+		corpus.remove(message)
+		return responce
 
 def send_message(recipient_id, response):
     #sends user the text message provided via input response parameter
